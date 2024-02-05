@@ -12,6 +12,9 @@ Semantic or instance segmentation from scratch or correcting existing labels
 - Load image as `image` layer and either load exiting segmentation or create a new `labels` layer
 - Use `labels` layer's instruments to correct labels
 
+![Napari_annotate_one_cell](https://github.com/kreshuklab/3D-GT-tools/assets/89460016/28fbcb01-7163-4917-b989-7ce51522c5a0)
+
+
 ### Tips
 - keys `1` to `5`: switch between tools: eraser, paint brush, bucket, color picker and move
 - `v`: toggle visibility of the current layer
