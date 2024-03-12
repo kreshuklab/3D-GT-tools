@@ -8,7 +8,7 @@ Napari without any additional plugins is a simple and relatively nice option sui
 ### Scope
 Semantic or instance segmentation from scratch or correcting existing labels
 
-### How to annotate 
+### How to annotate
 - Load image as `image` layer and either load exiting segmentation or create a new `labels` layer
 - Use `labels` layer's instruments to correct labels
 
@@ -25,7 +25,7 @@ Semantic or instance segmentation from scratch or correcting existing labels
   Setting to `3` for paint brush results in drawing with a ball of a given size in 3D space, which makes labeling in 3D more smooth and quick, but it's easy to paint something wrong if the object changes quickly between frames.  
   For bucket setting to `3` means joining masks, which can be useful for correcting instance segmentation.
 - `Ctrl+Z` works
-- I found it useful to play with the contrast of the image layer to see the borderes of noisy objects more clearly
+- I found it useful to play with the contrast of the image layer to see the borders of noisy objects more clearly
 - Change visible axes with `Ctrl + E` to check that the annotations are consistent in 3D
 
 
@@ -36,12 +36,23 @@ Semantic or instance segmentation from scratch or correcting existing labels
 
 
 
-## Name
+## Cellpose 2.0 GUI
+
 
 ### Scope
+Instance segmentation. The labeling work by drawing freehand closed lines in 2D using GUI.
+Label mask can be saved as `png`, `tif` or `numpy`
 
-### How to annotate 
+### How to annotate
+A complete [guide](https://cellpose.readthedocs.io/en/latest/gui.html#using-the-gui) for using `cellpose` gui is recommended. A small demo video of labeling 1 cell in 3D image is provided [here](https://oc.embl.de/index.php/s/Yb9JT2X5FcAxXFr)
 
 ### Tips
+- One can try to run pretrained model to predict a label mask and then delete erroneous labels and redraw then using drawing tools
+- Use short keys as described in the guide for faster/easier handling of different GUI functionalities
+  - Uncheck `single stroke` option to draw in 3D
+
 
 ### Limitations
+- Time-consuming as one has to label an object in each slice
+- No automated object neighborhood detection or holes filling: you get what you draw as a label masks
+- Very slow for large image data files
